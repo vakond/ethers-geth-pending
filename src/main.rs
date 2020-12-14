@@ -31,7 +31,7 @@ async fn main() -> anyhow::Result<()> {
     let tx_hash = bank.send_transaction(tx, None).await?;
     dbg!(tx_hash);
 
-    println!("Pending the transaction...");
+    println!("Pending transaction {}...", tx_hash);
     let receipt = bank.pending_transaction(tx_hash).await?;
     dbg!(&receipt);
 
