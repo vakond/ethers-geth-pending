@@ -1,0 +1,10 @@
+[package]
+name = "ethers-geth-pending"
+version = "0.1.0"
+authors = ["Vasily Kondratyev <wassily.kondratiev@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+anyhow = "~1"
+ethers = { git = "https://github.com/gakonst/ethers-rs", features = ["full"] }
+tokio = { version = "~0.2", features = ["full"] }

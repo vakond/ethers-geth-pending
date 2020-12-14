@@ -1,0 +1,15 @@
+FROM ethereum/client-go:stable
+
+USER root
+WORKDIR /root
+
+RUN apk add --no-cache bash
+
+COPY genesis.json genesis.json
+COPY password.txt password.txt
+COPY keystore /root/keystore
+COPY geth.sh entrypoint.sh
+
+RUN chmod +x /root/entrypoint.sh
+
+ENTRYPOINT ["/root/entrypoint.sh"]
